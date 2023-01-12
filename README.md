@@ -15,4 +15,8 @@ Inspirados pelo recente sucesso de jogos como “Vampire Survivors” e “20 Mi
 
 
 ## Funcionalidades do projeto :hammer:
-- `Funcionalidade 1` `Movimentação do jogador`: O jogador poderá se movimentar em todas as direções
+- `Funcionalidade 1` `Movimentação do jogador`: O jogador poderá se movimentar em todas as direções.
+- `Funcionalidade 2` `Criação do tiro`: O jogador poderá usar o mouse esquerdo para atirar um projétil.
+- `Funcionalidade 3` `Inimigos`: O jogo possui varios inimigos com IA, onde cada um deles possui uma vida diferente e assim sendo necessário uma maior quantidade de tiros para matar.
+- `Funcionalidade 4` `Pontuação e Dificuldade`: O jogo possui um contador de pontuação que é incrementado todo vez que mata um inimigo, e um sistema de dificuldade, onde o status é mudado dependeno da dificuldade.
+- `Funcionalidade 5` `Sistema de armas`: O jogo terá armas diferentes que são deixadas por inimigos mortos, e cada uma possui um tempo de recarga e dano diferente.
