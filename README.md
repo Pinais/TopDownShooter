@@ -4,6 +4,7 @@
 | Data | Versão | Descrição | Autor |
 |:----:|:------:|:---------:|:---------:|
 | 09/01/2023 | 0.1 | Criação do Documento | [Lucas Petruci](https://github.com/LucasPetruci) e [João Capello](https://github.com/Pinais) | 
+| 12/01/2023 | 0.2 | Adição na Documentação | [Lucas Petruci](https://github.com/LucasPetruci) e [João Capello](https://github.com/Pinais) | 
 
 ## Inspirações e bases:
 
