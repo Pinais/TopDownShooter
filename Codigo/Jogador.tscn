@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://textura/Square.png" type="Texture" id=1]
+[ext_resource path="res://Jogador.gd" type="Script" id=2]
+
+[node name="Jogador" type="Sprite"]
+modulate = Color( 0.101961, 0.882353, 0.447059, 1 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="tempo_recarga" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="tempo_recarga" to="." method="_on_tempo_recarga_timeout"]
