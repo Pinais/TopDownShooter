@@ -11,9 +11,11 @@
 Este é um projeto de jogo 2D feito na engine Godot baseado na série de tutoriais “Godot Wave Shooter Tutorial” pelo canal [Clécio Espindola GameDev](https://www.youtube.com/@clecioespindolagamedev).
 Inspirados pelo recente sucesso de jogos como “Vampire Survivors” e “20 Minutes Till Dawn”, decidimos levar o projeto adiante implementando mais recursos até torná-lo um jogo interessante.
 
+## Tecnologias Utilizadas
+- Godot Game Engine
+
 ## Status do Projeto
 :construction: Projeto em construção :construction:
-
 
 ## Funcionalidades do projeto :hammer:
 - `Funcionalidade 1` `Movimentação do jogador`: O jogador poderá se movimentar em todas as direções.
