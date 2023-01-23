@@ -26,6 +26,8 @@ Inspirados pelo recente sucesso de jogos como “Vampire Survivors” e “20 Mi
 - `Funcionalidade 3` `Inimigos`: Por meio de Herança o jogo possui varios inimigos com IA, onde cada um possui uma vida, velocidade e recuo diferente
 - `Funcionalidade 4` `Pontuação e Dificuldade`: O jogo possui um contador de pontuação que é incrementado todo vez que mata um inimigo, e um sistema de dificuldade, onde o status é alterado dependendo da dificuldade.
 - `Funcionalidade 5` `Sistema de armas`: O jogo terá armas diferentes que são deixadas por inimigos mortos, e cada uma possui um tempo de recarga e dano diferente.
+- `Funcionalidade 6` `Sistema de Power-ups`: A cada certo tempo irá aparecer um power-up, que pode ser pego pelo jogador e irá mudar os atributos.
+
 
 ## Video do jogo 
 
