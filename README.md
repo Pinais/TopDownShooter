@@ -6,7 +6,9 @@
 | 09/01/2023 | 0.1 | Criação do Documento | [Lucas Petruci](https://github.com/LucasPetruci) e [João Capello](https://github.com/Pinais) | 
 | 12/01/2023 | 0.2 | Adição na Documentação | [Lucas Petruci](https://github.com/LucasPetruci) e [João Capello](https://github.com/Pinais) | 
 | 16/01/2023 | 0.3| Criação do primeiro Projeto do jogo | [Lucas Petruci](https://github.com/LucasPetruci) e [João Capello](https://github.com/Pinais) | 
-| 23/01/2023 | 0.4| Adição de texturas do jogador e inimigo | [Lucas Petruci](https://github.com/LucasPetruci) e [João Capello](https://github.com/Pinais) | 
+| 23/01/2023 | 0.4| Adição de texturas do jogador e inimigo | [Lucas Petruci](https://github.com/LucasPetruci) e [João Capello](https://github.com/Pinais) |
+| 23/01/2023 | 0.4| Primeiro dia do Projeto - Movimentação e atirar | [Lucas Petruci](https://github.com/LucasPetruci) e [João Capello](https://github.com/Pinais) | 
+
 
 
 ## Inspirações e bases:
