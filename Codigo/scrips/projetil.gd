@@ -2,6 +2,9 @@ extends Sprite
 
 var movimento = Vector2(1, 0)
 var velocidade = 250
+
+var dano
+
 var dir_unica = true
 
 func _process(delta):

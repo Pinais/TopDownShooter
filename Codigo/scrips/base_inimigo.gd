@@ -1,9 +1,11 @@
 extends Sprite
 
-export(int) var velocidade = 75
 var movimento = Vector2.ZERO
+
+export(int) var velocidade = 75
 export(int) var recuo = 600
 export(int) var hp = 3
+export(int) var pontos = 10
 
 var atordoado = false
 
@@ -11,11 +13,12 @@ var particula_sangue = preload("res://particula_sangue.tscn")
 
 onready var cor_atual = modulate
 
-func _process(delta):
+func _process(_delta):
 	if hp <= 0 and Global.criacao_no_pai != null:
 		if Global.camera != null:
 			Global.camera.tremer_tela(50, 0.1)
-		Global.pontos += 10
+			
+		Global.pontos += pontos
 		var instancia_particula_sangue = Global.instance_node(particula_sangue, global_position, Global.criacao_no_pai)
 		instancia_particula_sangue.rotation = movimento.angle()
 		instancia_particula_sangue.modulate = Color.from_hsv(cor_atual.h, 1, 0.3)
@@ -36,7 +39,7 @@ func _on_hitbox_area_entered(area):
 		area.get_parent().queue_free()
 		movimento = -movimento * recuo
 		atordoado = true
-		hp -= 1 
+		hp -= area.get_parent().dano
 		$timer_recuo.start()
 
 func _on_timer_recuo_timeout():

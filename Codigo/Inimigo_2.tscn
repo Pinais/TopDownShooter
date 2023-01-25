@@ -4,6 +4,8 @@
 
 [node name="Inimigo_2" instance=ExtResource( 1 )]
 modulate = Color( 0.847059, 0.760784, 0.0156863, 1 )
+position = Vector2( 0, 0 )
 velocidade = 120
 recuo = 1200
 hp = 1
+pontos = 5
