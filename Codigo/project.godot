@@ -10,9 +10,15 @@ config_version=4
 
 [application]
 
+<<<<<<< Updated upstream
 config/name="Wave Shooter"
 run/main_scene="res://Arena.tscn"
 config/icon="res://icon.png"
+=======
+config/name="1Jogo"
+run/main_scene="res://Main.tscn"
+config/icon="res://art/icon.png"
+>>>>>>> Stashed changes
 
 [autoload]
 
