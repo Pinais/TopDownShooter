@@ -7,9 +7,10 @@ signal mudar_maior_pontuacao
 signal conectar_arma
 
 
-export var vida_max = 100
-export var vida_atual = 100
+export var vida_max : int = 100
+export var vida_atual : int = 100
 export var velocidade : int = 250
+export var armadura : int = 0
 
 
 var movimento : Vector2 = Vector2.ZERO

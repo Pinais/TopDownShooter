@@ -1,15 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ArmaBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
 [ext_resource path="res://Controle.gd" type="Script" id=3]
 [ext_resource path="res://Jogador.tscn" type="PackedScene" id=4]
 [ext_resource path="res://art/red_cannon.png" type="Texture" id=5]
+[ext_resource path="res://art/SpaceBackground.png" type="Texture" id=6]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="TimerGerarInimigo" type="Timer" parent="."]
+one_shot = true
 autostart = true
 
 [node name="Jogador" parent="." instance=ExtResource( 4 )]
@@ -52,5 +54,11 @@ rect_rotation = 180.0
 texture = ExtResource( 5 )
 expand = true
 stretch_mode = 2
+
+[node name="BackGround" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+z_index = -100
+z_as_relative = false
+texture = ExtResource( 6 )
 
 [connection signal="timeout" from="TimerGerarInimigo" to="." method="_on_TimerGerarInimigo_timeout"]

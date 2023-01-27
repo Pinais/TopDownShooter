@@ -6,6 +6,8 @@ signal soltar_pontos
 
 export var vida_max : int = 10
 export var vida_atual : int = 10
+export var armadura : int = 0
+export var resistencia : int = 1
 
 
 export var dano : int = 5
@@ -36,7 +38,7 @@ func inicializar(posicao : Vector2):
 
 
 func tomar_dano(_dano : int):
-	vida_atual -= _dano
+	vida_atual -= _dano - armadura
 	if vida_atual <= 0:
 		morrer()
 
@@ -48,4 +50,6 @@ func morrer():
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("tiro"):
-		tomar_dano(area.get_parent().dano)
+		var projetil = area.get_parent()
+		tomar_dano(projetil.dano)
+		projetil.perfurar(resistencia)

@@ -3,12 +3,12 @@
 [ext_resource path="res://ArmaBase.tscn" type="PackedScene" id=1]
 
 [node name="Arma1" instance=ExtResource( 1 )]
+alcance = 50.0
+velocidade_projetil = 500
 duracao_intervalo_tiro = 0.5
 duracao_tempo_recarga = 3.0
-alcance = 3.0
 municao_max = 5
 municao_atual = 5
-velocidade_projetil = 500
 
 [node name="DirecaoProjetil" parent="." index="0"]
 position = Vector2( 30, 0 )
