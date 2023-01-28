@@ -61,4 +61,6 @@ z_index = -100
 z_as_relative = false
 texture = ExtResource( 6 )
 
+[node name="GerenteInimigos" type="Node2D" parent="."]
+
 [connection signal="timeout" from="TimerGerarInimigo" to="." method="_on_TimerGerarInimigo_timeout"]

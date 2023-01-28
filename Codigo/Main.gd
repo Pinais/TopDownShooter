@@ -7,7 +7,7 @@ export var cena_ponto : PackedScene = preload("res://Ponto.tscn")
 
 onready var jogador = $Jogador
 onready var hud_jogador = $HUDJogador
-
+onready var gerente_inimigos = $GerenteInimigos
 
 func _ready():
 	randomize()
@@ -20,8 +20,8 @@ func gerar_inimigo_local_aleatorio():
 		while posicao_aleatoria.x > 0 and posicao_aleatoria.x < 1280 and posicao_aleatoria.y > 0 and posicao_aleatoria.y < 720:
 			posicao_aleatoria = Vector2(int(rand_range(-50, 1330)), int(rand_range(-50, 770)))
 		var inimigo = cena_inimigo.instance()
-		add_child(inimigo)
-		inimigo.inicializar(posicao_aleatoria)
+		gerente_inimigos.add_child(inimigo)
+		inimigo.inicializar(posicao_aleatoria, jogador)
 		
 		inimigo.connect("soltar_pontos", self, "gerar_pontos_posicao")
 
