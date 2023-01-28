@@ -25,6 +25,7 @@ onready var fim_da_arma = $FimDaArma
 onready var direcao_projetil = $DirecaoProjetil
 onready var intervalo_tiro = $IntervaloTiro
 onready var tempo_recarga = $TempoRecarga
+onready var area2d = $Area2D
 
 
 func _ready():

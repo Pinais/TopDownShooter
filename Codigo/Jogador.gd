@@ -19,6 +19,8 @@ var qtd_dano = 0
 var invencivel = false
 var esta_vivo = true
 var pontuacao = 0
+var vetor_itens_chao = []
+
 
 onready var arma = $Arma
 onready var tempo_invencibilidade = $TempoInvencibilidade
@@ -99,13 +101,16 @@ func _unhandled_input(event):
 		if esta_vivo:
 			arma.recarregar()
 		else: reviver()
+	if event.is_action_pressed("interagir"):
+		if not vetor_itens_chao.empty():
+			pegar_arma(vetor_itens_chao[len(vetor_itens_chao)-1])
 
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("area_arma"):
 		var arma_chao = area.get_parent()
 		if arma_chao != arma:
-			pegar_arma(arma_chao)
+			vetor_itens_chao.append(arma_chao)
 	
 	if area.is_in_group("pontos"):
 		var pontos = area.get_parent()
@@ -119,6 +124,9 @@ func _on_Area2D_area_entered(area):
 func _on_Area2D_area_exited(area):
 	if area.is_in_group("inimigo"):
 		qtd_dano = clamp(qtd_dano - area.get_parent().dano, 0, 1000)
+	if area.is_in_group("area_arma"):
+		var arma_chao = area.get_parent()
+		vetor_itens_chao.erase(arma_chao)
 
 
 func _on_TempoInvencibilidade_timeout():
