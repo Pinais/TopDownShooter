@@ -51,7 +51,6 @@ func atirar(pai):
 		instancia_projetil.inicializar(movimento_projetil, velocidade_projetil, alcance, dano, perfuracao_projetil, rotacao_projetil)
 		
 		municao_atual -= 1
-		print(municao_atual)
 		emit_signal("mudar_qtd_municao", municao_atual)
 		intervalo_tiro.start()
 		pode_atirar = false
