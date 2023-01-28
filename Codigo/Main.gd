@@ -13,6 +13,7 @@ onready var gerente_pontos = $GerentePontos
 func _ready():
 	randomize()
 	hud_jogador.inicializar(jogador)
+	jogador.connect("jogador_morreu", self, "fim_de_tentativa")
 
 
 func gerar_inimigo_local_aleatorio():
@@ -35,6 +36,14 @@ func gerar_pontos_posicao(quantidade : int, posicao : Vector2):
 	
 	gerente_pontos.call_deferred("add_child", instancia_ponto)
 	instancia_ponto.global_position = posicao
+
+
+func fim_de_tentativa():
+	hud_jogador.atualizar_valor_etiqueta_maior_pontuacao()
+	for inimigo in gerente_inimigos.get_children():
+		inimigo.queue_free()
+	for ponto in gerente_pontos.get_children():
+		ponto.queue_free()
 
 
 func _on_TimerGerarInimigo_timeout():

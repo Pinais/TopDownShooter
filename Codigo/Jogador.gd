@@ -3,8 +3,8 @@ extends Sprite
 
 signal mudar_vida
 signal mudar_pontuacao
-signal mudar_maior_pontuacao
 signal conectar_arma
+signal jogador_morreu
 
 
 export var vida_max : int = 100
@@ -75,7 +75,7 @@ func tomar_dano(_dano):
 func morrer():
 	esta_vivo = false
 	visible = false
-	emit_signal("mudar_maior_pontuacao")
+	emit_signal("jogador_morreu")
 
 
 func reviver():
@@ -83,6 +83,7 @@ func reviver():
 	emit_signal("mudar_vida", -vida_max)
 	emit_signal("mudar_pontuacao", -pontuacao)
 	pontuacao = 0
+	arma.recarregar(0.1)
 	global_position = Vector2(640,360)
 	esta_vivo = true
 	visible = true

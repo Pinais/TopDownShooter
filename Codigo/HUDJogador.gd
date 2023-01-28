@@ -22,9 +22,8 @@ func inicializar(_jogador):
 	jogador = _jogador
 	jogador.connect("mudar_vida", self, "atualizar_valor_barra_vida")
 	jogador.connect("mudar_pontuacao", self, "atualizar_valor_etiqueta_pontuacao")
-	jogador.connect("mudar_maior_pontuacao", self, "atualizar_valor_etiqueta_maior_pontuacao")
-	jogador.connect("conectar_arma", self, "conectar_nova_arma")
 	jogador.arma.connect("mudar_qtd_municao", self, "atualizar_qtd_municao")
+	jogador.connect("conectar_arma", self, "conectar_nova_arma")
 	barra_de_vida.value = jogador.vida_max
 	#azulejo_municao.rect_size.y += jogador.arma.municao_max * tamanho_azulejo_municao.y
 
