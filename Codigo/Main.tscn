@@ -63,4 +63,6 @@ texture = ExtResource( 6 )
 
 [node name="GerenteInimigos" type="Node2D" parent="."]
 
+[node name="GerentePontos" type="Node2D" parent="."]
+
 [connection signal="timeout" from="TimerGerarInimigo" to="." method="_on_TimerGerarInimigo_timeout"]

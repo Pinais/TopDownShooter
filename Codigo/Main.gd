@@ -8,6 +8,7 @@ export var cena_ponto : PackedScene = preload("res://Ponto.tscn")
 onready var jogador = $Jogador
 onready var hud_jogador = $HUDJogador
 onready var gerente_inimigos = $GerenteInimigos
+onready var gerente_pontos = $GerentePontos
 
 func _ready():
 	randomize()
@@ -32,7 +33,7 @@ func gerar_pontos_posicao(quantidade : int, posicao : Vector2):
 	instancia_ponto.scale.x = quantidade / 10.0
 	instancia_ponto.scale.y = quantidade / 10.0
 	
-	call_deferred("add_child", instancia_ponto)
+	gerente_pontos.call_deferred("add_child", instancia_ponto)
 	instancia_ponto.global_position = posicao
 
 
