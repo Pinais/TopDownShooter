@@ -6,12 +6,12 @@ export var cena_ponto : PackedScene = preload("res://Ponto.tscn")
 
 
 onready var jogador = $Jogador
-onready var controle = $Controle
+onready var hud_jogador = $HUDJogador
 
 
 func _ready():
 	randomize()
-	controle.inicializar(jogador)
+	hud_jogador.inicializar(jogador)
 
 
 func gerar_inimigo_local_aleatorio():
