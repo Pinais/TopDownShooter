@@ -3,7 +3,7 @@
 ## Versão
   | Data | Versão | Pontos | Descrição | Autores |
 |:----:|:------:|:---------:|:---------:|:---------:|
-| 16/01/2023 | 0.1 | Criação do Documento | Foi abordado como o jogo seria trabalhado, decidimos assistir a Video aula do [Clécio Espindola GameDev](https://www.youtube.com/@clecioespindolagamedev) de TopDownShooter e praticar o que aprendemos com um jogo nosso porém com o mesmo tema. |[Lucas Petruci](https://github.com/LucasPetruci) e [João Capello](https://github.com/Pinais) |
+| 16/01/2023 | 0.1 | Criação do Documento | Foi abordado como o jogo seria trabalhado, decidimos assistir a Video aula do [Clécio Espindola GameDev](https://www.youtube.com/@clecioespindolagamedev) de TopDownShooter e praticar o que aprendemos, porém com um jogo nosso no mesmo tema. |[Lucas Petruci](https://github.com/LucasPetruci) e [João Capello](https://github.com/Pinais) |
 | 23/01/2023 | 0.2 | Adição do Documento | Realização de uma reunião para abordar os temas que estariam no jogo e realizamos o Diagrama de Classe |[Lucas Petruci](https://github.com/LucasPetruci) e [João Capello](https://github.com/Pinais) |
 | 24/01/2023 | 0.3 | Primeiro dia de desenvolvimento | No dia 1 foi realizado o desenvolvimento da movimentação e da função atirar que é a responsável por usar o projétil |[Lucas Petruci](https://github.com/LucasPetruci) e [João Capello](https://github.com/Pinais) |
 | 25/01/2023 | 0.4 | Segundo dia de desenvolvimento | No dia 2 adicionamos inimigos e iniciamos um sistema de pegar itens do chão, além de corrigir vários bugs que apareceram durante o processo.. |[Lucas Petruci](https://github.com/LucasPetruci) e [João Capello](https://github.com/Pinais) |
