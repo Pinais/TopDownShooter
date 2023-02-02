@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SpaceBackground.png-b8430bcef25d11a94f1e3c32d9e307b7.stex"
+path="res://.import/purple_cannon.png-47cbba5a73754a8fe78be615e41394d7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/SpaceBackground.png"
-dest_files=[ "res://.import/SpaceBackground.png-b8430bcef25d11a94f1e3c32d9e307b7.stex" ]
+source_file="res://art/purple_cannon.png"
+dest_files=[ "res://.import/purple_cannon.png-47cbba5a73754a8fe78be615e41394d7.stex" ]
 
 [params]
 

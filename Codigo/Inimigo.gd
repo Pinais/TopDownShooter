@@ -20,8 +20,6 @@ var jogador
 
 func _process(delta):
 	if jogador != null:
-		if not jogador.esta_vivo:
-			queue_free()
 		posicao_jogador = jogador.global_position
 		look_at(posicao_jogador)
 		movimento = jogador.global_position - self.global_position

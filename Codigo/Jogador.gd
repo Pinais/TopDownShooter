@@ -5,6 +5,7 @@ signal mudar_vida
 signal mudar_pontuacao
 signal conectar_arma
 signal jogador_morreu
+signal mudar_arma_hud
 
 
 export var vida_max : int = 100
@@ -28,6 +29,7 @@ onready var tempo_invencibilidade = $TempoInvencibilidade
 
 func _ready():
 	arma.inicializar(posicao_arma)
+	emit_signal("mudar_arma_hud", arma.imagem_arma)
 
 
 func _process(_delta:float) -> void:
@@ -60,8 +62,8 @@ func pegar_arma(nova_arma):
 	arma.position = posicao_arma
 	
 	arma.inicializar(posicao_arma)
-	
 	emit_signal("conectar_arma", arma)
+	emit_signal("mudar_arma_hud", arma.imagem_arma)
 
 
 func tomar_dano(_dano):
