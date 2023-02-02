@@ -8,33 +8,27 @@ export var vida_max : int = 10
 export var vida_atual : int = 10
 export var armadura : int = 0
 export var resistencia : int = 1
-
-
 export var dano : int = 5
-
 export var velocidade : int = 100
-export var movimento : Vector2 = Vector2.ZERO
-
 export var pontos : int = 10
 
 
+var movimento : Vector2 = Vector2.ZERO
 var posicao_jogador : Vector2 = Vector2.ZERO
-
-
-onready var jogador = get_parent().get_node("Jogador")
+var jogador
 
 
 func _process(delta):
-	if not jogador.esta_vivo:
-		queue_free()
-	posicao_jogador = jogador.global_position
-	look_at(posicao_jogador)
-	movimento = jogador.global_position - self.global_position
-	global_position += movimento.normalized() * velocidade * delta
+	if jogador != null:
+		posicao_jogador = jogador.global_position
+		look_at(posicao_jogador)
+		movimento = jogador.global_position - self.global_position
+		global_position += movimento.normalized() * velocidade * delta
 
 
-func inicializar(posicao : Vector2):
+func inicializar(posicao : Vector2, _jogador):
 	global_position = posicao
+	jogador = _jogador
 
 
 func tomar_dano(_dano : int):

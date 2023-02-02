@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Jogador.gd" type="Script" id=1]
 [ext_resource path="res://art/spaceship.png" type="Texture" id=2]
-[ext_resource path="res://Arma1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ArmaSniper.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28.5, 27 )

@@ -8,7 +8,12 @@ extents = Vector2( 9, 5 )
 
 [node name="ArmaBase" type="Node2D"]
 script = ExtResource( 1 )
-alcance = 50.0
+alcance = 1.5
+dano = 7
+velocidade_projetil = 600
+duracao_tempo_recarga = 1.8
+municao_atual = 20
+precisao = 0.75
 
 [node name="DirecaoProjetil" type="Position2D" parent="."]
 position = Vector2( 20, 0 )

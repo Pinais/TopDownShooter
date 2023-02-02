@@ -8,7 +8,7 @@ export var Projetil : PackedScene = preload("res://Projetil.tscn")
 export var alcance : float = 2
 export var dano : int = 20
 export var perfuracao_projetil : int = 1
-export var velocidade_projetil : int = 200
+export var velocidade_projetil : int = 500
 
 export var duracao_intervalo_tiro : float = 0.05
 export var duracao_tempo_recarga : float = 2
@@ -25,6 +25,8 @@ onready var fim_da_arma = $FimDaArma
 onready var direcao_projetil = $DirecaoProjetil
 onready var intervalo_tiro = $IntervaloTiro
 onready var tempo_recarga = $TempoRecarga
+onready var area2d = $Area2D
+onready var imagem_arma = $Sprite.texture
 
 
 func _ready():
@@ -34,6 +36,7 @@ func _ready():
 
 
 func inicializar(_position : Vector2):
+	imagem_arma = $Sprite.texture
 	position = _position
 	scale.x = 2
 	scale.y = 2
@@ -51,7 +54,6 @@ func atirar(pai):
 		instancia_projetil.inicializar(movimento_projetil, velocidade_projetil, alcance, dano, perfuracao_projetil, rotacao_projetil)
 		
 		municao_atual -= 1
-		print(municao_atual)
 		emit_signal("mudar_qtd_municao", municao_atual)
 		intervalo_tiro.start()
 		pode_atirar = false
@@ -60,10 +62,11 @@ func atirar(pai):
 
 
 func recarregar(_duracao_tempo_recarga = duracao_tempo_recarga):
-	tempo_recarga.wait_time = _duracao_tempo_recarga
-	tempo_recarga.start()
-	recarregando = true
-	emit_signal("mudar_qtd_municao", municao_atual)
+	if not recarregando and municao_atual < municao_max:
+		tempo_recarga.wait_time = _duracao_tempo_recarga
+		tempo_recarga.start()
+		recarregando = true
+		emit_signal("mudar_qtd_municao", 0)
 
 
 func _on_IntervaloTiro_timeout():
