@@ -3,12 +3,14 @@ extends Node2D
 
 export var cena_inimigo : PackedScene = preload("res://Inimigo.tscn")
 export var cena_ponto : PackedScene = preload("res://Ponto.tscn")
+export (Array, PackedScene) var lista_armas
 
 
 onready var jogador = $Jogador
 onready var hud_jogador = $HUDJogador
 onready var gerente_inimigos = $GerenteInimigos
 onready var gerente_pontos = $GerentePontos
+onready var gerente_armas = $GerenteArmas
 
 
 func _ready():
@@ -16,7 +18,7 @@ func _ready():
 	if jogador.arma.imagem_arma != hud_jogador.imagem_arma:
 		hud_jogador.atualizar_arma_hud(jogador.arma.imagem_arma)
 	hud_jogador.inicializar(jogador)
-	jogador.connect("jogador_morreu", self, "fim_de_tentativa")
+	jogador.connect("jogador_morreu", self, "gerenciar_fim_de_tentativa")
 	_carregar()
 
 
@@ -29,7 +31,13 @@ func gerar_inimigo_local_aleatorio():
 		gerente_inimigos.add_child(inimigo)
 		inimigo.inicializar(posicao_aleatoria, jogador)
 		
-		inimigo.connect("soltar_pontos", self, "gerar_pontos_posicao")
+		inimigo.connect("inimigo_morreu", self, "gerenciar_morte_inimigo")
+
+
+func gerenciar_morte_inimigo(pontos : int, chance : float, posicao : Vector2):
+	gerar_pontos_posicao(pontos, posicao)
+	if rand_range(0, 1) <= chance:
+		gerar_item_posicao(posicao)
 
 
 func gerar_pontos_posicao(quantidade : int, posicao : Vector2):
@@ -42,7 +50,20 @@ func gerar_pontos_posicao(quantidade : int, posicao : Vector2):
 	instancia_ponto.global_position = posicao
 
 
-func fim_de_tentativa():
+func gerar_item_posicao(posicao : Vector2):
+	var quantidade_armas = len(lista_armas)
+	var arma_escolhida = lista_armas[rand_range(0, quantidade_armas)]
+	var instancia_arma = arma_escolhida.instance()
+	
+	instancia_arma.z_index = -6
+	instancia_arma.scale.x = 5
+	instancia_arma.scale.y = 5
+	instancia_arma.global_position = posicao
+	
+	gerente_armas.call_deferred("add_child", instancia_arma)
+
+
+func gerenciar_fim_de_tentativa():
 	hud_jogador.verificar_valor_etiqueta_maior_pontuacao()
 	_salvar(hud_jogador.valor_etiqueta_maior_pontuacao)
 	for inimigo in gerente_inimigos.get_children():
@@ -50,6 +71,9 @@ func fim_de_tentativa():
 	
 	for ponto in gerente_pontos.get_children():
 		ponto.queue_free()
+	
+	for arma in gerente_armas.get_children():
+		arma.queue_free()
 
 
 func _salvar(maior_pontuacao):

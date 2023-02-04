@@ -1,7 +1,7 @@
 extends Sprite
 
 
-signal soltar_pontos
+signal inimigo_morreu
 
 
 export var vida_max : int = 10
@@ -11,6 +11,7 @@ export var resistencia : int = 1
 export var dano : int = 5
 export var velocidade : int = 100
 export var pontos : int = 10
+export var chance_soltar_item : float = .1
 
 
 var movimento : Vector2 = Vector2.ZERO
@@ -39,7 +40,7 @@ func tomar_dano(_dano : int):
 
 func morrer():
 	queue_free()
-	emit_signal("soltar_pontos", pontos, global_position)
+	emit_signal("inimigo_morreu", pontos, chance_soltar_item, global_position)
 
 
 func _on_Area2D_area_entered(area):
