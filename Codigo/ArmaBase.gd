@@ -40,6 +40,7 @@ func inicializar(_position : Vector2):
 	position = _position
 	scale.x = 2
 	scale.y = 2
+	z_index = 1
 
 
 func atirar(pai):

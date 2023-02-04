@@ -8,6 +8,7 @@ extents = Vector2( 20, 32 )
 
 [node name="Inimigo" type="Sprite"]
 position = Vector2( 440, 263 )
+z_index = 5
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
