@@ -39,10 +39,14 @@ func atualizar_valor_etiqueta_pontuacao (_valor : int):
 	etiqueta_pontuacao.text = str(valor_etiqueta_pontuacao)
 
 
-func atualizar_valor_etiqueta_maior_pontuacao ():
+func atualizar_valor_etiqueta_maior_pontuacao(valor):
+	valor_etiqueta_maior_pontuacao = valor
+	etiqueta_maior_pontuacao.text = str(valor)
+
+
+func verificar_valor_etiqueta_maior_pontuacao():
 	if valor_etiqueta_maior_pontuacao < valor_etiqueta_pontuacao: 
-		valor_etiqueta_maior_pontuacao = valor_etiqueta_pontuacao
-		etiqueta_maior_pontuacao.text = str(valor_etiqueta_maior_pontuacao)
+		atualizar_valor_etiqueta_maior_pontuacao(valor_etiqueta_pontuacao)
 
 
 func conectar_nova_arma(nova_arma):
