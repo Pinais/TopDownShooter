@@ -10,9 +10,9 @@ var tamanho_azulejo_municao = Vector2(16,16)
 onready var barra_de_vida = $BarraDeVida
 onready var etiqueta_pontuacao = $EtiquetaPontuacao
 onready var etiqueta_maior_pontuacao = $EtiquetaMaiorPontuacao
+onready var etiqueta_qps = $EtiquetaQPS
 onready var azulejo_municao = $AzulejoMunicao
 onready var imagem_arma = $ImagemArma
-
 
 func _ready():
 	etiqueta_pontuacao.text = str(valor_etiqueta_pontuacao)
@@ -30,18 +30,22 @@ func inicializar(_jogador):
 	#azulejo_municao.rect_size.y += jogador.arma.municao_max * tamanho_azulejo_municao.y
 
 
+func atualizar_valor_qps(valor):
+	etiqueta_qps.text = str("FPS: ",valor)
+
+
 func atualizar_valor_barra_vida(_valor : int):
 	barra_de_vida.value -= _valor
 
 
 func atualizar_valor_etiqueta_pontuacao (_valor : int):
 	valor_etiqueta_pontuacao += _valor
-	etiqueta_pontuacao.text = str(valor_etiqueta_pontuacao)
+	etiqueta_pontuacao.text = str("SCORE: ", valor_etiqueta_pontuacao)
 
 
 func atualizar_valor_etiqueta_maior_pontuacao(valor):
 	valor_etiqueta_maior_pontuacao = valor
-	etiqueta_maior_pontuacao.text = str(valor)
+	etiqueta_maior_pontuacao.text = str("HIGHSCORE: ", valor)
 
 
 func verificar_valor_etiqueta_maior_pontuacao():
