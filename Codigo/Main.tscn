@@ -1,17 +1,16 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://ArmaRifle.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Main.gd" type="Script" id=2]
-[ext_resource path="res://HUDJogador.gd" type="Script" id=3]
-[ext_resource path="res://Jogador.tscn" type="PackedScene" id=4]
-[ext_resource path="res://art/red_cannon.png" type="Texture" id=5]
-[ext_resource path="res://art/SpaceBackground.png" type="Texture" id=6]
-[ext_resource path="res://ArmaSniper.tscn" type="PackedScene" id=7]
-[ext_resource path="res://ArmaBase.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Codigo/Main.gd" type="Script" id=2]
+[ext_resource path="res://Codigo/HUDJogador.gd" type="Script" id=3]
+[ext_resource path="res://Atores/Jogador.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Componentes/red_cannon.png" type="Texture" id=5]
+[ext_resource path="res://Componentes/SpaceBackground.png" type="Texture" id=6]
+[ext_resource path="res://Armas/ArmaSniper.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Armas/ArmaBase.tscn" type="PackedScene" id=8]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
-lista_armas = [ ExtResource( 8 ), ExtResource( 1 ), ExtResource( 7 ) ]
+lista_armas = [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 7 ) ]
 
 [node name="BackGround" type="Sprite" parent="."]
 position = Vector2( 640, 360 )
@@ -45,10 +44,10 @@ margin_bottom = 690.0
 text = "SCORE: 0"
 
 [node name="EtiquetaMaiorPontuacao" type="Label" parent="HUDJogador"]
-margin_left = 1200.0
-margin_top = 640.0
-margin_right = 1240.0
-margin_bottom = 680.0
+margin_left = 1155.0
+margin_top = 646.0
+margin_right = 1277.0
+margin_bottom = 686.0
 
 [node name="EtiquetaQPS" type="Label" parent="HUDJogador"]
 margin_left = 1167.0
