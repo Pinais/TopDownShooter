@@ -22,6 +22,11 @@ func _ready():
 	_carregar()
 
 
+func _process(_delta):
+	var qps = Engine.get_frames_per_second()
+	hud_jogador.atualizar_valor_qps(qps)
+
+
 func gerar_inimigo_local_aleatorio():
 	if jogador.esta_vivo:
 		var posicao_aleatoria = Vector2(int(rand_range(-50, 1330)), int(rand_range(-50, 770)))
