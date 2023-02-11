@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Sprite",
 "class": "Projetil",
 "language": "GDScript",
-"path": "res://Projetil.gd"
+"path": "res://Codigo/Projetil.gd"
 } ]
 _global_script_class_icons={
 "Projetil": ""
@@ -22,7 +22,7 @@ _global_script_class_icons={
 
 config/name="1Jogo"
 run/main_scene="res://MenuInicial.tscn"
-config/icon="res://art/icon.png"
+config/icon="res://Componentes/icon.png"
 
 [debug]
 
@@ -33,6 +33,10 @@ settings/physics_interpolation/enable_warnings=false
 window/size/width=1280
 window/size/height=720
 window/vsync/use_vsync=false
+
+[global]
+
+engine=false
 
 [gui]
 

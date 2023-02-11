@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Codigo/Jogador.gd" type="Script" id=1]
+[ext_resource path="res://Componentes/spaceship.png" type="Texture" id=2]
+[ext_resource path="res://Armas/ArmaSniper.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 28.5, 27 )
+
+[node name="Jogador" type="Sprite"]
+position = Vector2( 690, 360 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="." groups=["jogador"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -2.5, 0 )
+shape = SubResource( 1 )
+
+[node name="Arma" parent="." instance=ExtResource( 3 )]
+
+[node name="TempoInvencibilidade" type="Timer" parent="."]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="timeout" from="TempoInvencibilidade" to="." method="_on_TempoInvencibilidade_timeout"]
