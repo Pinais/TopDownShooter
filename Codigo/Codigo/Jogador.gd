@@ -82,7 +82,7 @@ func morrer():
 	emit_signal("jogador_morreu")
 
 
-func reviver():
+func nova_tentativa():
 	vida_atual = vida_max
 	emit_signal("mudar_vida", -vida_max)
 	emit_signal("mudar_pontuacao", -pontuacao)
@@ -102,7 +102,6 @@ func _unhandled_input(event):
 	if event.is_action_pressed("recarregar"):
 		if esta_vivo:
 			arma.recarregar()
-		else: reviver()
 	if event.is_action_pressed("interagir"):
 		if not vetor_itens_chao.empty():
 			pegar_arma(vetor_itens_chao[len(vetor_itens_chao)-1])
