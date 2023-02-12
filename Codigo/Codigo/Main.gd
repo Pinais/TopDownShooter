@@ -11,6 +11,7 @@ onready var hud_jogador = $HUDJogador
 onready var gerente_inimigos = $GerenteInimigos
 onready var gerente_pontos = $GerentePontos
 onready var gerente_armas = $GerenteArmas
+onready var tela_morte = $TelaMorte
 
 
 func _ready():
@@ -20,6 +21,7 @@ func _ready():
 	hud_jogador.inicializar(jogador)
 	jogador.connect("jogador_morreu", self, "gerenciar_fim_de_tentativa")
 	_carregar()
+	tela_morte.visible = false
 
 
 func _process(_delta):
@@ -79,6 +81,13 @@ func gerenciar_fim_de_tentativa():
 	
 	for arma in gerente_armas.get_children():
 		arma.queue_free()
+	
+	tela_morte.visible = true
+
+
+func nova_tentativa():
+	tela_morte.visible = false
+	jogador.nova_tentativa()
 
 
 func _salvar(maior_pontuacao):
@@ -98,6 +107,11 @@ func _carregar():
 	var dicionario_arquivo_carregado = parse_json(arquivo.get_line())
 	arquivo.close()
 	hud_jogador.atualizar_valor_etiqueta_maior_pontuacao(dicionario_arquivo_carregado["maior_pontuacao"])
+
+
+func _unhandled_input(event):
+	if event.is_action_pressed("recarregar") and not jogador.esta_vivo:
+		nova_tentativa()
 
 
 func _on_TimerGerarInimigo_timeout():

@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://Cenas/TelaMorte.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Codigo/Main.gd" type="Script" id=2]
 [ext_resource path="res://Codigo/HUDJogador.gd" type="Script" id=3]
 [ext_resource path="res://Atores/Jogador.tscn" type="PackedScene" id=4]
@@ -79,5 +80,9 @@ expand = true
 [node name="GerentePontos" type="Node2D" parent="."]
 
 [node name="GerenteArmas" type="Node2D" parent="."]
+
+[node name="TelaMorte" parent="." instance=ExtResource( 1 )]
+z_index = 1000
+z_as_relative = false
 
 [connection signal="timeout" from="TimerGerarInimigo" to="." method="_on_TimerGerarInimigo_timeout"]
