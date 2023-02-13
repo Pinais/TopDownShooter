@@ -6,8 +6,7 @@ func _on_Botao_Comecar_pressed():
 
 
 func _on_Botao_Opcoes_pressed():
-	print("Deveria abrir opcoes")
-#	get_tree().change_scene("res://Opcoes.tscn")
+	var _change_scene = get_tree().change_scene("res://Cenas/TelaOpcoes.tscn")
 
 
 func _on_Botao_Sair_pressed():

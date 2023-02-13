@@ -113,6 +113,5 @@ func _unhandled_input(event):
 	if event.is_action_pressed("recarregar") and not jogador.esta_vivo:
 		nova_tentativa()
 
-
 func _on_TimerGerarInimigo_timeout():
 	gerar_inimigo_local_aleatorio()
