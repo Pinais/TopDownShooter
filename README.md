@@ -4,6 +4,9 @@
 Este é um projeto de jogo 2D feito na engine Godot baseado na série de tutoriais “Godot Wave Shooter Tutorial” pelo canal [Clécio Espindola GameDev](https://www.youtube.com/@clecioespindolagamedev).
 Inspirados pelo recente sucesso de jogos como “Vampire Survivors” e “20 Minutes Till Dawn”, decidimos levar o projeto adiante implementando mais recursos até torná-lo um jogo interessante.
 
+## Status do Projeto
+:construction: Projeto em construção :construction:
+
 ## Versão
   | Data | Versão | Pontos | Descrição | Autores |
 |:----:|:------:|:---------:|:---------:|:---------:|
@@ -19,14 +22,11 @@ Inspirados pelo recente sucesso de jogos como “Vampire Survivors” e “20 Mi
 | 11/02/2023 | 0.7.1 | Oitavo dia de desenvolvimento | Adicionado um contador de FPS que mostrárá os quadros por segundo do jogo, localizado no canto superior direito. Os diretórios dos arquivos foram organizados para uma melhor modificação futura, cada um em sua pasta. Criação da tela de morte e opções (não possui funcionalidade ainda). | [Lucas Petruci](https://github.com/LucasPetruci) e [João Capello](https://github.com/Pinais) |
 
 
-
 ## Tecnologias Utilizadas
 - Godot Game Engine
 - Adobe Photoshop
 - Figma
 
-## Status do Projeto
-:construction: Projeto em construção :construction:
 
 ## Diagrama de Classe
 ![GameTopDownShooter](https://user-images.githubusercontent.com/99514230/215515545-f2efb926-da7f-4a2c-a52f-525a03878fc8.png)
