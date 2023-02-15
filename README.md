@@ -1,5 +1,9 @@
 <h1 align="center"> TopDownShooter </h1>
 
+## Inspirações e bases
+Este é um projeto de jogo 2D feito na engine Godot baseado na série de tutoriais “Godot Wave Shooter Tutorial” pelo canal [Clécio Espindola GameDev](https://www.youtube.com/@clecioespindolagamedev).
+Inspirados pelo recente sucesso de jogos como “Vampire Survivors” e “20 Minutes Till Dawn”, decidimos levar o projeto adiante implementando mais recursos até torná-lo um jogo interessante.
+
 ## Versão
   | Data | Versão | Pontos | Descrição | Autores |
 |:----:|:------:|:---------:|:---------:|:---------:|
@@ -15,10 +19,6 @@
 | 11/02/2023 | 0.9.1 | Oitavo dia de desenvolvimento | Adicionado um contador de FPS que mostrárá os quadros por segundo do jogo, localizado no canto superior direito. Os diretórios dos arquivos foram organizados para uma melhor modificação futura, cada um em sua pasta. Criação ta tela de opções (não possui funcionalidade ainda). | [Lucas Petruci](https://github.com/LucasPetruci) e [João Capello](https://github.com/Pinais) |
 
 
-## Inspirações e bases:
-
-Este é um projeto de jogo 2D feito na engine Godot baseado na série de tutoriais “Godot Wave Shooter Tutorial” pelo canal [Clécio Espindola GameDev](https://www.youtube.com/@clecioespindolagamedev).
-Inspirados pelo recente sucesso de jogos como “Vampire Survivors” e “20 Minutes Till Dawn”, decidimos levar o projeto adiante implementando mais recursos até torná-lo um jogo interessante.
 
 ## Tecnologias Utilizadas
 - Godot Game Engine
