@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Componentes/Gravity Guardian.png" type="Texture" id=1]
 [ext_resource path="res://Componentes/SpaceBackground.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Componentes/BtOpções.png" type="Texture" id=8]
 [ext_resource path="res://Componentes/BtOpções (1).png" type="Texture" id=9]
 [ext_resource path="res://Componentes/Inter-VariableFont_slnt,wght.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Componentes/QRCode.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 28
@@ -77,6 +78,14 @@ custom_fonts/font = SubResource( 1 )
 text = "Jogo desenvolvido pela GG™"
 align = 1
 valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 10.0
+margin_top = 560.0
+margin_right = 160.0
+margin_bottom = 710.0
+texture = ExtResource( 11 )
+expand = true
 
 [connection signal="pressed" from="Botao_Comecar" to="." method="_on_Botao_Comecar_pressed"]
 [connection signal="pressed" from="Botao_Opcoes" to="." method="_on_Botao_Opcoes_pressed"]
