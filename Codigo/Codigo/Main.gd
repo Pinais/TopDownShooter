@@ -6,12 +6,16 @@ export var cena_ponto : PackedScene = preload("res://Recursos/Ponto.tscn")
 export (Array, PackedScene) var lista_armas
 
 
+var mostrar_fps : bool
+var dicionario_opcoes : Dictionary = {}
+
 onready var jogador = $Jogador
 onready var hud_jogador = $HUDJogador
 onready var gerente_inimigos = $GerenteInimigos
 onready var gerente_pontos = $GerentePontos
 onready var gerente_armas = $GerenteArmas
 onready var tela_morte = $TelaMorte
+onready var gerente_opcoes = $GerenteOpcoes
 
 
 func _ready():
@@ -22,11 +26,14 @@ func _ready():
 	jogador.connect("jogador_morreu", self, "gerenciar_fim_de_tentativa")
 	_carregar()
 	tela_morte.visible = false
+	dicionario_opcoes = gerente_opcoes.carregar_dicionario_opcoes()
+	mostrar_fps = dicionario_opcoes["exibir_fps"]
 
 
 func _process(_delta):
-	var qps = Engine.get_frames_per_second()
-	hud_jogador.atualizar_valor_qps(qps)
+	var fps = Engine.get_frames_per_second()
+	if mostrar_fps:
+		hud_jogador.atualizar_valor_fps(fps)
 
 
 func gerar_inimigo_local_aleatorio():

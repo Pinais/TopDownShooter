@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Cenas/TelaMorte.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Codigo/Main.gd" type="Script" id=2]
@@ -6,12 +6,10 @@
 [ext_resource path="res://Atores/Jogador.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Componentes/red_cannon.png" type="Texture" id=5]
 [ext_resource path="res://Componentes/SpaceBackground.png" type="Texture" id=6]
-[ext_resource path="res://Armas/ArmaSniper.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Armas/ArmaBase.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Recursos/GerenteOpcoes.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
-lista_armas = [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 7 ) ]
 
 [node name="BackGround" type="Sprite" parent="."]
 position = Vector2( 640, 360 )
@@ -50,7 +48,7 @@ margin_top = 646.0
 margin_right = 1277.0
 margin_bottom = 686.0
 
-[node name="EtiquetaQPS" type="Label" parent="HUDJogador"]
+[node name="EtiquetaFPS" type="Label" parent="HUDJogador"]
 margin_left = 1167.0
 margin_top = 19.0
 margin_right = 1261.0
@@ -84,5 +82,7 @@ expand = true
 [node name="TelaMorte" parent="." instance=ExtResource( 1 )]
 z_index = 1000
 z_as_relative = false
+
+[node name="GerenteOpcoes" parent="." instance=ExtResource( 9 )]
 
 [connection signal="timeout" from="TimerGerarInimigo" to="." method="_on_TimerGerarInimigo_timeout"]

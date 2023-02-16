@@ -1,9 +1,12 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Codigo/TelaOpcoes.gd" type="Script" id=1]
+[ext_resource path="res://Recursos/GerenteOpcoes.tscn" type="PackedScene" id=2]
 
 [node name="TelaOpcoes" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="gerenteOpcoes" parent="." instance=ExtResource( 2 )]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = 40.0
@@ -12,114 +15,258 @@ margin_right = 1240.0
 margin_bottom = 680.0
 color = Color( 0.419608, 0.419608, 0.419608, 1 )
 
-[node name="VolumeGeral" type="Label" parent="."]
-margin_left = 260.0
-margin_top = 140.0
-margin_right = 360.0
-margin_bottom = 154.0
-text = "VOLUME GERAL"
+[node name="LabelOpcoes" type="Label" parent="ColorRect"]
+margin_right = 1200.0
+margin_bottom = 30.0
+rect_pivot_offset = Vector2( 150, 163 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "OPÇÕES"
 align = 1
 valign = 1
 
-[node name="Slider" type="HScrollBar" parent="VolumeGeral"]
-margin_left = 240.0
-margin_right = 677.0
-margin_bottom = 12.0
-page = 5.0
-value = 10.0
-
-[node name="VolumeMusica" type="Label" parent="."]
-margin_left = 260.0
-margin_top = 230.0
-margin_right = 370.0
-margin_bottom = 244.0
-text = "VOLUME MUSICA"
-
-[node name="Slider" type="HScrollBar" parent="VolumeMusica"]
-margin_left = 240.0
-margin_top = 3.0
-margin_right = 677.0
-margin_bottom = 15.0
-page = 5.0
-value = 10.0
-
-[node name="Resolucao" type="Label" parent="."]
-margin_left = 260.0
-margin_top = 390.0
-margin_right = 338.0
-margin_bottom = 404.0
-text = "RESOLUÇÃO"
-
-[node name="OptionButton" type="OptionButton" parent="Resolucao"]
-margin_left = 240.0
-margin_right = 488.0
-margin_bottom = 20.0
-
-[node name="VSYNC" type="Label" parent="."]
-margin_left = 260.0
-margin_top = 300.0
-margin_right = 300.0
-margin_bottom = 314.0
-text = "VSYNC"
-
-[node name="CheckButton" type="CheckButton" parent="VSYNC"]
-margin_left = 240.0
-margin_right = 316.0
-margin_bottom = 40.0
-
-[node name="Dificuldade" type="Label" parent="."]
-margin_left = 260.0
-margin_top = 470.0
-margin_right = 352.0
-margin_bottom = 484.0
-text = "DIFICULDADE"
-
-[node name="BtFacil" type="CheckBox" parent="Dificuldade" groups=["botao_radio_dificuldade"]]
-margin_left = 240.0
-margin_right = 304.0
-margin_bottom = 24.0
-text = "FACIL"
-
-[node name="BtMedio" type="CheckBox" parent="Dificuldade" groups=["botao_radio_dificuldade"]]
-margin_left = 480.0
-margin_right = 504.0
-margin_bottom = 24.0
-text = "MEDIO"
-
-[node name="BtDificil" type="CheckBox" parent="Dificuldade" groups=["botao_radio_dificuldade"]]
-margin_left = 720.0
-margin_right = 795.0
-margin_bottom = 24.0
-text = "DIFICIL"
-
-[node name="Controles" type="Label" parent="."]
-margin_left = 260.0
-margin_top = 540.0
-margin_right = 336.0
-margin_bottom = 554.0
-text = "CONTROLES"
-
-[node name="Button" type="Button" parent="Controles"]
-margin_left = 240.0
-margin_right = 260.0
-margin_bottom = 20.0
-text = "ALTERAR CONTROLES"
-
-[node name="BtSair" type="Button" parent="."]
-margin_left = 588.0
-margin_top = 600.0
-margin_right = 692.0
+[node name="BtSair" type="Button" parent="ColorRect"]
+margin_left = 400.0
+margin_top = 560.0
+margin_right = 800.0
 margin_bottom = 620.0
+size_flags_horizontal = 3
+size_flags_vertical = 8
 text = "SALVAR E SAIR"
 
-[node name="Label" type="Label" parent="."]
-margin_left = 613.0
-margin_top = 60.0
-margin_right = 665.0
-margin_bottom = 74.0
-text = "OPÇÕES"
+[node name="TabContainer" type="TabContainer" parent="ColorRect"]
+margin_right = 1200.0
+margin_bottom = 36.0
 
-[connection signal="pressed" from="Dificuldade/BtFacil" to="." method="_on_BtFacil_pressed"]
-[connection signal="pressed" from="Dificuldade/BtMedio" to="." method="_on_BtMedio_pressed"]
-[connection signal="pressed" from="Dificuldade/BtDificil" to="." method="_on_BtDificil_pressed"]
-[connection signal="pressed" from="BtSair" to="." method="_on_BtSair_pressed"]
+[node name="Sons" type="Tabs" parent="ColorRect/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="VolumeGeral" type="Label" parent="ColorRect/TabContainer/Sons"]
+margin_left = 200.0
+margin_top = 40.0
+margin_right = 300.0
+margin_bottom = 60.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "VOLUME GERAL"
+valign = 1
+
+[node name="Slider" type="HScrollBar" parent="ColorRect/TabContainer/Sons/VolumeGeral"]
+margin_left = 200.0
+margin_right = 637.0
+margin_bottom = 12.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+page = 5.0
+value = 10.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VolumeMusica" type="Label" parent="ColorRect/TabContainer/Sons"]
+margin_left = 200.0
+margin_top = 120.0
+margin_right = 310.0
+margin_bottom = 140.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+text = "VOLUME MUSICA"
+valign = 1
+
+[node name="Slider" type="HScrollBar" parent="ColorRect/TabContainer/Sons/VolumeMusica"]
+margin_left = 200.0
+margin_right = 637.0
+margin_bottom = 12.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+page = 5.0
+value = 10.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Video" type="Tabs" parent="ColorRect/TabContainer"]
+visible = false
+margin_right = 40.0
+margin_bottom = 24.0
+
+[node name="Resolucao" type="Label" parent="ColorRect/TabContainer/Video"]
+margin_left = 200.0
+margin_top = 100.0
+margin_right = 300.0
+margin_bottom = 120.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+text = "RESOLUÇÃO"
+valign = 1
+
+[node name="OptionButton" type="OptionButton" parent="ColorRect/TabContainer/Video/Resolucao"]
+margin_left = 200.0
+margin_right = 448.0
+margin_bottom = 20.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VSYNC" type="Label" parent="ColorRect/TabContainer/Video"]
+margin_left = 200.0
+margin_top = 160.0
+margin_right = 300.0
+margin_bottom = 180.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+text = "VSYNC"
+valign = 1
+
+[node name="CheckButton" type="CheckButton" parent="ColorRect/TabContainer/Video/VSYNC"]
+margin_left = 200.0
+margin_top = -5.0
+margin_right = 276.0
+margin_bottom = 35.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+align = 1
+icon_align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ExibirFPS" type="Label" parent="ColorRect/TabContainer/Video"]
+margin_left = 200.0
+margin_top = 220.0
+margin_right = 300.0
+margin_bottom = 240.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+text = "EXIBIR FPS"
+valign = 1
+
+[node name="ChkBtExibirFps" type="CheckButton" parent="ColorRect/TabContainer/Video/ExibirFPS"]
+margin_left = 200.0
+margin_top = -5.0
+margin_right = 276.0
+margin_bottom = 35.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+align = 1
+icon_align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="FPS" type="Label" parent="ColorRect/TabContainer/Video"]
+margin_left = 200.0
+margin_top = 280.0
+margin_right = 300.0
+margin_bottom = 300.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+text = "LIMITE DE FPS"
+valign = 1
+
+[node name="OptBtLimiteFps" type="OptionButton" parent="ColorRect/TabContainer/Video/FPS"]
+margin_left = 200.0
+margin_right = 448.0
+margin_bottom = 20.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Jogo" type="Tabs" parent="ColorRect/TabContainer"]
+visible = false
+margin_right = 40.0
+margin_bottom = 24.0
+
+[node name="Dificuldade" type="Label" parent="ColorRect/TabContainer/Jogo"]
+margin_left = 200.0
+margin_top = 100.0
+margin_right = 300.0
+margin_bottom = 120.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+text = "DIFICULDADE"
+valign = 1
+
+[node name="BtFacil" type="CheckBox" parent="ColorRect/TabContainer/Jogo/Dificuldade" groups=["botao_radio_dificuldade"]]
+margin_left = 241.0
+margin_right = 305.0
+margin_bottom = 24.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+text = "FACIL"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BtMedio" type="CheckBox" parent="ColorRect/TabContainer/Jogo/Dificuldade" groups=["botao_radio_dificuldade"]]
+margin_left = 481.0
+margin_right = 554.0
+margin_bottom = 24.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+text = "MEDIO"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BtDificil" type="CheckBox" parent="ColorRect/TabContainer/Jogo/Dificuldade" groups=["botao_radio_dificuldade"]]
+margin_left = 721.0
+margin_right = 796.0
+margin_bottom = 24.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+text = "DIFICIL"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Controles" type="Label" parent="ColorRect/TabContainer/Jogo"]
+margin_left = 200.0
+margin_top = 160.0
+margin_right = 300.0
+margin_bottom = 180.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+text = "CONTROLES"
+valign = 1
+
+[node name="Button" type="Button" parent="ColorRect/TabContainer/Jogo/Controles"]
+margin_left = 200.0
+margin_right = 347.0
+margin_bottom = 20.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+text = "ALTERAR CONTROLES"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Reset" type="Label" parent="ColorRect/TabContainer/Jogo"]
+margin_left = 200.0
+margin_top = 220.0
+margin_right = 300.0
+margin_bottom = 240.0
+text = "RESET"
+
+[node name="BtReset" type="Button" parent="ColorRect/TabContainer/Jogo/Reset"]
+margin_left = 200.0
+margin_right = 400.0
+margin_bottom = 20.0
+text = "RESETAR PONTUAÇÃO ALTA"
+
+[connection signal="pressed" from="ColorRect/BtSair" to="." method="_on_BtSair_pressed"]
+[connection signal="toggled" from="ColorRect/TabContainer/Video/ExibirFPS/ChkBtExibirFps" to="." method="_on_ChkBtExibirFps_toggled"]
+[connection signal="item_selected" from="ColorRect/TabContainer/Video/FPS/OptBtLimiteFps" to="." method="_on_OptBtLimiteFps_item_selected"]
+[connection signal="pressed" from="ColorRect/TabContainer/Jogo/Dificuldade/BtFacil" to="." method="_on_BtFacil_pressed"]
+[connection signal="pressed" from="ColorRect/TabContainer/Jogo/Dificuldade/BtMedio" to="." method="_on_BtMedio_pressed"]
+[connection signal="pressed" from="ColorRect/TabContainer/Jogo/Dificuldade/BtDificil" to="." method="_on_BtDificil_pressed"]
+[connection signal="pressed" from="ColorRect/TabContainer/Jogo/Reset/BtReset" to="." method="_on_BtReset_pressed"]
