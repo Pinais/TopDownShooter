@@ -111,9 +111,10 @@ func _salvar(maior_pontuacao):
 func _carregar():
 	var arquivo = File.new()
 	arquivo.open("user://savegame.save", File.READ)
-	var dicionario_arquivo_carregado = parse_json(arquivo.get_line())
+	var _dicionario_arquivo_carregado = parse_json(arquivo.get_line())
 	arquivo.close()
-	hud_jogador.atualizar_valor_etiqueta_maior_pontuacao(dicionario_arquivo_carregado["maior_pontuacao"])
+	hud_jogador.atualizar_valor_etiqueta_maior_pontuacao(0)
+	#hud_jogador.atualizar_valor_etiqueta_maior_pontuacao(dicionario_arquivo_carregado["maior_pontuacao"])
 
 
 func _unhandled_input(event):

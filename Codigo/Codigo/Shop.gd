@@ -28,14 +28,18 @@ func trocar_itens():
 		if lista_itens[i] != null and is_instance_valid(lista_itens[i]):
 			lista_itens[i].queue_free()
 			gerente_itens.remove_child(lista_itens[i])
-		
+			
 		var item_escolhido = lista_possiveis_itens[int(rand_range(0, len(lista_possiveis_itens)))]
-		
-		lista_itens[i] = item_escolhido.instance()
-		gerente_itens.add_child(lista_itens[i])
-		lista_itens[i].position = lista_posicao_item[i]
-		lista_itens[i].scale = Vector2(5,5)
+		lista_itens[i] = instanciar_posicao(item_escolhido, gerente_itens, lista_posicao_item[i], Vector2(5,5))
 		i += 1
+
+
+func instanciar_posicao(objeto, pai, posicao : Vector2 = Vector2(0,0), escala : Vector2 = Vector2(1,1)):
+	var receptaculo = objeto.instance()
+	pai.add_child(receptaculo)
+	receptaculo.position = posicao
+	receptaculo.scale = escala
+	return receptaculo
 
 
 func _unhandled_input(event):
@@ -45,6 +49,6 @@ func _unhandled_input(event):
 
 func _on_BotaoReroll_area_entered(_area):
 	botao_ativo = true
-	
+
 func _on_BotaoReroll_area_exited(_area):
 	botao_ativo = false

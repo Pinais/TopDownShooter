@@ -4,7 +4,7 @@ var dicionario_opcoes : Dictionary
 func carregar_dicionario_opcoes():
 	print("enviando dictionary")
 	var arquivo = File.new()
-	if arquivo.file_exists("user://config.cfg"):
+	if arquivo.file_exists("user://config.cfg") and arquivo.get_len() != 0:
 		arquivo.open("user://config.cfg", File.READ)
 		dicionario_opcoes = parse_json(arquivo.get_line())
 		arquivo.close()

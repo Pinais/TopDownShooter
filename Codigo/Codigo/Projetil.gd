@@ -17,6 +17,7 @@ onready var tempo_projetil := $TempoProjetil
 func _ready():
 	pass
 
+
 func _process(delta):
 	global_position += movimento * velocidade * delta
 
