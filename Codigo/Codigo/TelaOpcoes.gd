@@ -4,12 +4,12 @@ extends Node2D
 var dicionario_opcoes = {}
 
 
-onready var gerente_opcoes = $gerenteOpcoes
-onready var bt_facil = $ColorRect/TabContainer/Jogo/Dificuldade/BtFacil
-onready var bt_medio = $ColorRect/TabContainer/Jogo/Dificuldade/BtMedio
-onready var bt_dificil = $ColorRect/TabContainer/Jogo/Dificuldade/BtDificil
-onready var opt_bt_limite_fps = $ColorRect/TabContainer/Video/FPS/OptBtLimiteFps
-onready var chk_bt_exibir_fps = $ColorRect/TabContainer/Video/ExibirFPS/ChkBtExibirFps
+@onready var gerente_opcoes = $gerenteOpcoes
+@onready var bt_facil = $ColorRect/TabContainer/Jogo/Dificuldade/BtFacil
+@onready var bt_medio = $ColorRect/TabContainer/Jogo/Dificuldade/BtMedio
+@onready var bt_dificil = $ColorRect/TabContainer/Jogo/Dificuldade/BtDificil
+@onready var opt_bt_limite_fps = $ColorRect/TabContainer/Video/FPS/OptBtLimiteFps
+@onready var chk_bt_exibir_fps = $ColorRect/TabContainer/Video/ExibirFPS/ChkBtExibirFps
 
 
 func _ready():
@@ -33,7 +33,7 @@ func atualizar_iu():
 	
 	var exibir_fps = bool(dicionario_opcoes["exibir_fps"])
 	_on_ChkBtExibirFps_toggled(exibir_fps)
-	chk_bt_exibir_fps.pressed = exibir_fps
+	chk_bt_exibir_fps.button_pressed = exibir_fps
 
 
 func inicializar_opcoes_limite_fps():
@@ -54,7 +54,7 @@ func alterar_limite_fps(index : int):
 	else:
 		fps = 0
 
-	Engine.set_target_fps(fps)
+	Engine.max_fps = fps
 	gerente_opcoes.escrever_dicionario(dicionario_opcoes, "index_limite_fps", index)
 	gerente_opcoes.escrever_dicionario(dicionario_opcoes, "valor_limite_fps", fps)
 	opt_bt_limite_fps.selected = index
@@ -68,9 +68,9 @@ func _on_ChkBtExibirFps_toggled(button_pressed):
 
 
 func botao_radio(bt_apertado, string_dificuldade):
-	bt_facil.pressed =  bt_apertado == bt_facil
-	bt_medio.pressed = bt_apertado == bt_medio
-	bt_dificil.pressed = bt_apertado == bt_dificil	
+	bt_facil.button_pressed =  bt_apertado == bt_facil
+	bt_medio.button_pressed = bt_apertado == bt_medio
+	bt_dificil.button_pressed = bt_apertado == bt_dificil	
 	gerente_opcoes.escrever_dicionario(dicionario_opcoes, "dificuldade", string_dificuldade)
 
 func _on_BtFacil_pressed():
@@ -88,9 +88,8 @@ func reset_pontuacao_max():
 		"maior_pontuacao" : 0,
 	}
 	
-	var arquivo = File.new()
-	arquivo.open("user://savegame.save", File.WRITE)
-	arquivo.store_line(to_json(dicionario_salvar))
+	var arquivo = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	arquivo.store_line(JSON.stringify(dicionario_salvar))
 	arquivo.close()
 
 func _on_BtReset_pressed():
@@ -99,4 +98,4 @@ func _on_BtReset_pressed():
 
 func _on_BtSair_pressed():
 	gerente_opcoes.salvar_dicionario_opcoes(dicionario_opcoes)
-	var _resultado = get_tree().change_scene("res://MenuInicial.tscn")
+	var _resultado = get_tree().change_scene_to_file("res://MenuInicial.tscn")

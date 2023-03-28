@@ -1,17 +1,17 @@
-extends Sprite
+extends Sprite2D
 class_name Projetil
 
 
-export var dano : int = 5
-export var duracao_tempo_projetil = 10
-export var velocidade : int = 100
-export var perfuracao : int = 2
+@export var dano : int = 5
+@export var duracao_tempo_projetil = 10
+@export var velocidade : int = 100
+@export var perfuracao : int = 2
 
 
 var movimento : Vector2 = Vector2.ZERO
 
 
-onready var tempo_projetil := $TempoProjetil
+@onready var tempo_projetil := $TempoProjetil
 
 
 func _ready():

@@ -1,17 +1,17 @@
-extends Sprite
+extends Sprite2D
 
 
 signal inimigo_morreu
 
 
-export var vida_max : int = 10
-export var vida_atual : int = 10
-export var armadura : int = 0
-export var resistencia : int = 1
-export var dano : int = 5
-export var velocidade : int = 100
-export var pontos : int = 10
-export var chance_soltar_item : float = .1
+@export var vida_max : int = 10
+@export var vida_atual : int = 10
+@export var armadura : int = 0
+@export var resistencia : int = 1
+@export var dano : int = 5
+@export var velocidade : int = 100
+@export var pontos : int = 10
+@export var chance_soltar_item : float = .1
 
 
 var movimento : Vector2 = Vector2.ZERO

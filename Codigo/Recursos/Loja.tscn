@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://blu6e7djveiag"]
+
+[ext_resource type="Texture2D" uid="uid://dookw4ysyd08n" path="res://Componentes/LojaTemp.png" id="1"]
+[ext_resource type="Script" path="res://Codigo/Loja.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://btachtyei0hwl" path="res://Armas/ArmaSniper.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://dqyl76ad7wjf1" path="res://Armas/ArmaRifle.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://clnpuim080pmg" path="res://Armas/ArmaBase.tscn" id="5"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(11.5, 5.33333)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(32.5, 21)
+
+[node name="Loja" type="Node2D"]
+position = Vector2(500, 350)
+script = ExtResource("2")
+lista_possiveis_itens = Array[PackedScene]([ExtResource("5"), ExtResource("4"), ExtResource("3"), ExtResource("3")])
+lista_posicao_item = Array[Vector2]([Vector2(-100, -110), Vector2(-100, -20), Vector2(-100, 60), Vector2(-100, 140)])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 2
+position = Vector2(73, 0)
+scale = Vector2(5.28125, 8)
+texture = ExtResource("1")
+
+[node name="BotaoReroll" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BotaoReroll"]
+position = Vector2(-61.5, 216)
+scale = Vector2(3, 3)
+shape = SubResource("1")
+
+[node name="GerenteItens" type="Node2D" parent="."]
+
+[node name="BotaoSairLoja" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BotaoSairLoja"]
+position = Vector2(78.5, 236)
+shape = SubResource("2")
+
+[connection signal="area_entered" from="BotaoReroll" to="." method="_on_BotaoReroll_area_entered"]
+[connection signal="area_exited" from="BotaoReroll" to="." method="_on_BotaoReroll_area_exited"]
+[connection signal="area_entered" from="BotaoSairLoja" to="." method="_on_BotaoSairLoja_area_entered"]
+[connection signal="area_exited" from="BotaoSairLoja" to="." method="_on_BotaoSairLoja_area_exited"]
