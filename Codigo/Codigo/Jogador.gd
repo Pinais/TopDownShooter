@@ -1,4 +1,4 @@
-extends Sprite
+extends Sprite2D
 
 
 signal mudar_vida
@@ -8,10 +8,10 @@ signal jogador_morreu
 signal mudar_arma_hud
 
 
-export var vida_max : int = 100
-export var vida_atual : int = 100
-export var velocidade : int = 250
-export var armadura : int = 0
+@export var vida_max : int = 100
+@export var vida_atual : int = 100
+@export var velocidade : int = 250
+@export var armadura : int = 0
 
 
 var movimento : Vector2 = Vector2.ZERO
@@ -23,8 +23,8 @@ var pontuacao = 0
 var vetor_itens_chao = []
 
 
-onready var arma = $Arma
-onready var tempo_invencibilidade = $TempoInvencibilidade
+@onready var arma = $Arma
+@onready var tempo_invencibilidade = $TempoInvencibilidade
 
 
 func _ready():
@@ -103,7 +103,7 @@ func _unhandled_input(event):
 		if esta_vivo:
 			arma.recarregar()
 	if event.is_action_pressed("interagir"):
-		if not vetor_itens_chao.empty():
+		if not vetor_itens_chao.is_empty():
 			pegar_arma(vetor_itens_chao[len(vetor_itens_chao)-1])
 
 

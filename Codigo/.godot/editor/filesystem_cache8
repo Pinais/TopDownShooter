@@ -1,0 +1,60 @@
+2a60927148abd1d33b818b535e306557
+::res://::1679962036
+default_env.tres::Environment::3241279604006112433::1679962036::0::1::::<><>::
+Main.tscn::PackedScene::6248540379260072382::1679962036::0::1::::<><>::uid://qob3xnifnkv3<>res://Codigo/Main.gd<>res://Codigo/HUDJogador.gd<>uid://blatwwuhiiwy0<>uid://cskmcyioc4t4o<>uid://ctetj6hgxm6k6<>uid://btachtyei0hwl<>uid://dqyl76ad7wjf1<>uid://ipdromn4xdah<>uid://clnpuim080pmg<>uid://blu6e7djveiag
+MenuInicial.tscn::PackedScene::1767865063220352927::1679962035::0::1::::<><>::uid://diyevfm8pqlq5<>uid://ctetj6hgxm6k6<>uid://b0v4x0mfkumm7<>res://Codigo/MenuInicial.gd<>uid://do3s0ngmpttvu<>uid://c8clhgd2ud1kx<>uid://cstgeknsdn4r1<>uid://coipbd43jd1iy<>uid://pwnl84gconca<>uid://cyw2gcuto14kh<>uid://b502cx11hwlsg
+::res://Armas/::1679962036
+ArmaBase.tscn::PackedScene::5572702468882369490::1679962036::0::1::::<><>::res://Codigo/ArmaBase.gd<>uid://cskmcyioc4t4o
+ArmaRifle.tscn::PackedScene::8332555276114442488::1679962036::0::1::::<><>::uid://byyhi3l4qion7<>uid://clnpuim080pmg
+ArmaSniper.tscn::PackedScene::3720143682570966107::1679962036::0::1::::<><>::uid://bk7kdx7b86tw4<>uid://clnpuim080pmg
+Projetil.tscn::PackedScene::4227266130875693317::1679962036::0::1::::<><>::uid://dnebm87bag65r<>res://Codigo/Projetil.gd
+::res://Atores/::1679962036
+Inimigo.tscn::PackedScene::4686969274473632561::1679962035::0::1::::<><>::uid://dgc4r1711xwh6<>res://Codigo/Inimigo.gd
+Jogador.tscn::PackedScene::3159692060778798657::1679962036::0::1::::<><>::res://Codigo/Jogador.gd<>uid://bdmagb0iob3x4<>uid://btachtyei0hwl
+::res://Cenas/::1679962035
+MenuInicial.tscn::PackedScene::-1::1679960897::0::1::::<><>::res://Componentes/Gravity Guardian.png<>res://Componentes/SpaceBackground.png<>res://Componentes/BtComecar.png<>res://Codigo/MenuInicial.gd<>res://Componentes/BtComecar (1).png<>res://Componentes/BtSair (1).png<>res://Componentes/BtSair.png<>res://Componentes/BtOpções.png<>res://Componentes/BtOpções (1).png<>res://Componentes/Inter-VariableFont_slnt,wght.ttf
+QRCode.png::CompressedTexture2D::9128853067976080583::1676512251::1679960907::1::::<><>::
+TelaMorte.tscn::PackedScene::1152034734477657606::1679962035::0::1::::<><>::uid://bl2qqfkm5122a
+TelaOpcoes.tscn::PackedScene::3724037048526881101::1679962035::0::1::::<><>::res://Codigo/TelaOpcoes.gd<>uid://ipdromn4xdah
+::res://Codigo/::1679961818
+ArmaBase.gd::GDScript::-1::1679960897::0::1::::<>Node2D<>::
+GerenteOpcoes.gd::GDScript::-1::1679961343::0::1::::<>Node<>::
+HUDJogador.gd::GDScript::-1::1679960897::0::1::::<>Node2D<>::
+Inimigo.gd::GDScript::-1::1679960897::0::1::::<>Sprite2D<>::
+Jogador.gd::GDScript::-1::1679960897::0::1::::<>Sprite2D<>::
+Loja.gd::GDScript::-1::1679961818::0::1::::<>Node2D<>::
+Main.gd::GDScript::-1::1679961785::0::1::::<>Node2D<>::
+MenuInicial.gd::GDScript::-1::1679960897::0::1::::<>Node2D<>::
+Projetil.gd::GDScript::-1::1679960897::0::1::::Projetil<>Sprite2D<>::
+TelaOpcoes.gd::GDScript::-1::1679961527::0::1::::<>Node2D<>::
+::res://Componentes/::1679962033
+blue_cannon.png::CompressedTexture2D::3154982993074287357::1674965258::1679962050::1::::<><>::
+BtComecar (1).png::CompressedTexture2D::8200846682481266994::1675310122::1679960907::1::::<><>::
+BtComecar.png::CompressedTexture2D::4186296905391953480::1675310122::1679960907::1::::<><>::
+BtOpções (1).png::CompressedTexture2D::1099059708144452104::1675310122::1679960907::1::::<><>::
+BtOpções.png::CompressedTexture2D::5772912944690281208::1675310122::1679960907::1::::<><>::
+BtSair (1).png::CompressedTexture2D::7093882671455301323::1675310122::1679960907::1::::<><>::
+BtSair.png::CompressedTexture2D::6075835721468489704::1675310178::1679960907::1::::<><>::
+coin_sheet.png::CompressedTexture2D::5833791345057999289::1674886155::1679960907::1::::<><>::
+desktop.ini::TextFile::-1::1674886155::0::1::::<><>::
+eletric_cannon.png::CompressedTexture2D::7575143324121198552::1674965258::1679960907::1::::<><>::
+Gravity Guardian.png::CompressedTexture2D::7770598518598525434::1675309045::1679960907::1::::<><>::
+green_cannon.png::CompressedTexture2D::4120938791389909682::1674965258::1679960907::1::::<><>::
+icon.png::CompressedTexture2D::2480432541737004047::1674886155::1679960907::1::::<><>::
+Inter-VariableFont_slnt,wght.ttf::FontFile::6504440135682244447::1675311252::1679960907::1::::<><>::
+Kanit-Black.ttf::FontFile::6698781515048144709::1675311066::1679960907::1::::<><>::
+LojaTemp.png::CompressedTexture2D::8171455169064683563::1677805004::1679962014::1::::<><>::
+plasma_cannon.png::CompressedTexture2D::7108334465023987071::1674965258::1679962014::1::::<><>::
+projetil.png::CompressedTexture2D::8080058458659592665::1674886155::1679962014::1::::<><>::
+purple_cannon.png::CompressedTexture2D::717034973611199266::1674965258::1679962014::1::::<><>::
+QRCode.png::CompressedTexture2D::4545339616471592822::1676512261::1679962014::1::::<><>::
+red_cannon.png::CompressedTexture2D::6057617779471160316::1674886155::1679962014::1::::<><>::
+satellite.png::CompressedTexture2D::7586316435960068221::1674886155::1679962014::1::::<><>::
+se fodeu.png::CompressedTexture2D::3215236486308977074::1676159313::1679962014::1::::<><>::
+SpaceBackground.png::CompressedTexture2D::6115858241874104895::1674886155::1679962014::1::::<><>::
+spaceship.png::CompressedTexture2D::2621770553945070019::1674886155::1679962014::1::::<><>::
+yellow_cannon.png::CompressedTexture2D::3083613871886235559::1674965258::1679962014::1::::<><>::
+::res://Recursos/::1679962036
+GerenteOpcoes.tscn::PackedScene::592689679384715067::1679962036::0::1::::<><>::res://Codigo/GerenteOpcoes.gd
+Loja.tscn::PackedScene::3201676574562798966::1679962036::0::1::::<><>::uid://dookw4ysyd08n<>res://Codigo/Loja.gd<>uid://btachtyei0hwl<>uid://dqyl76ad7wjf1<>uid://clnpuim080pmg
+Ponto.tscn::PackedScene::8836594898518852490::1679962036::0::1::::<><>::uid://cpd6xq686fygv

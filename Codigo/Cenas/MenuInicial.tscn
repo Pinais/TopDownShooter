@@ -1,17 +1,17 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Componentes/Gravity Guardian.png" type="Texture" id=1]
-[ext_resource path="res://Componentes/SpaceBackground.png" type="Texture" id=2]
-[ext_resource path="res://Componentes/BtComecar.png" type="Texture" id=3]
+[ext_resource path="res://Componentes/Gravity Guardian.png" type="Texture2D" id=1]
+[ext_resource path="res://Componentes/SpaceBackground.png" type="Texture2D" id=2]
+[ext_resource path="res://Componentes/BtComecar.png" type="Texture2D" id=3]
 [ext_resource path="res://Codigo/MenuInicial.gd" type="Script" id=4]
-[ext_resource path="res://Componentes/BtComecar (1).png" type="Texture" id=5]
-[ext_resource path="res://Componentes/BtSair (1).png" type="Texture" id=6]
-[ext_resource path="res://Componentes/BtSair.png" type="Texture" id=7]
-[ext_resource path="res://Componentes/BtOpções.png" type="Texture" id=8]
-[ext_resource path="res://Componentes/BtOpções (1).png" type="Texture" id=9]
-[ext_resource path="res://Componentes/Inter-VariableFont_slnt,wght.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Componentes/BtComecar (1).png" type="Texture2D" id=5]
+[ext_resource path="res://Componentes/BtSair (1).png" type="Texture2D" id=6]
+[ext_resource path="res://Componentes/BtSair.png" type="Texture2D" id=7]
+[ext_resource path="res://Componentes/BtOpções.png" type="Texture2D" id=8]
+[ext_resource path="res://Componentes/BtOpções (1).png" type="Texture2D" id=9]
+[ext_resource path="res://Componentes/Inter-VariableFont_slnt,wght.ttf" type="FontFile" id=10]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="FontFile" id=1]
 size = 28
 font_data = ExtResource( 10 )
 
@@ -19,26 +19,26 @@ font_data = ExtResource( 10 )
 script = ExtResource( 4 )
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
-margin_right = 1280.0
-margin_bottom = 720.0
+offset_right = 1280.0
+offset_bottom = 720.0
 
 [node name="BG" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+offset_right = 40.0
+offset_bottom = 40.0
 texture = ExtResource( 2 )
 
 [node name="GravityGuardian" type="TextureRect" parent="."]
-margin_right = 1280.0
-margin_bottom = 285.0
-rect_pivot_offset = Vector2( 640, 142.5 )
+offset_right = 1280.0
+offset_bottom = 285.0
+pivot_offset = Vector2( 640, 142.5 )
 texture = ExtResource( 1 )
 stretch_mode = 4
 
 [node name="Botao_Comecar" type="TextureButton" parent="."]
-margin_left = 490.0
-margin_top = 285.0
-margin_right = 790.0
-margin_bottom = 385.0
+offset_left = 490.0
+offset_top = 285.0
+offset_right = 790.0
+offset_bottom = 385.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 5 )
@@ -46,10 +46,10 @@ expand = true
 stretch_mode = 3
 
 [node name="Botao_Opcoes" type="TextureButton" parent="."]
-margin_left = 490.0
-margin_top = 409.0
-margin_right = 790.0
-margin_bottom = 509.0
+offset_left = 490.0
+offset_top = 409.0
+offset_right = 790.0
+offset_bottom = 509.0
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 9 )
@@ -57,10 +57,10 @@ expand = true
 stretch_mode = 3
 
 [node name="Botao_Sair" type="TextureButton" parent="."]
-margin_left = 490.0
-margin_top = 533.0
-margin_right = 790.0
-margin_bottom = 633.0
+offset_left = 490.0
+offset_top = 533.0
+offset_right = 790.0
+offset_bottom = 633.0
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 6 )
@@ -69,11 +69,11 @@ stretch_mode = 3
 
 [node name="Credits" type="Label" parent="."]
 modulate = Color( 0.321569, 0.313726, 0.313726, 1 )
-margin_left = 858.0
-margin_top = 673.0
-margin_right = 1272.0
-margin_bottom = 712.0
-custom_fonts/font = SubResource( 1 )
+offset_left = 858.0
+offset_top = 673.0
+offset_right = 1272.0
+offset_bottom = 712.0
+theme_override_fonts/font = SubResource( 1 )
 text = "Jogo desenvolvido pela GG™"
 align = 1
 valign = 1

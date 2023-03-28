@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://qob3xnifnkv3"]
 
-[ext_resource path="res://Componentes/se fodeu.png" type="Texture" id=1]
+[ext_resource type="Texture2D" uid="uid://bl2qqfkm5122a" path="res://Componentes/se fodeu.png" id="1"]
 
 [node name="TelaMorte" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 1280.0
-margin_bottom = 720.0
-texture = ExtResource( 1 )
-expand = true
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1")
+expand_mode = 1

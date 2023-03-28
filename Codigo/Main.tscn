@@ -1,81 +1,81 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=12 format=3 uid="uid://cva3suqeqlkq5"]
 
-[ext_resource path="res://Cenas/TelaMorte.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Codigo/Main.gd" type="Script" id=2]
-[ext_resource path="res://Codigo/HUDJogador.gd" type="Script" id=3]
-[ext_resource path="res://Atores/Jogador.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Componentes/red_cannon.png" type="Texture" id=5]
-[ext_resource path="res://Componentes/SpaceBackground.png" type="Texture" id=6]
-[ext_resource path="res://Armas/ArmaSniper.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Armas/ArmaRifle.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Recursos/GerenteOpcoes.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Armas/ArmaBase.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Recursos/Shop.tscn" type="PackedScene" id=11]
+[ext_resource type="PackedScene" uid="uid://qob3xnifnkv3" path="res://Cenas/TelaMorte.tscn" id="1"]
+[ext_resource type="Script" path="res://Codigo/Main.gd" id="2"]
+[ext_resource type="Script" path="res://Codigo/HUDJogador.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://blatwwuhiiwy0" path="res://Atores/Jogador.tscn" id="4"]
+[ext_resource type="Texture2D" uid="uid://cskmcyioc4t4o" path="res://Componentes/red_cannon.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://ctetj6hgxm6k6" path="res://Componentes/SpaceBackground.png" id="6"]
+[ext_resource type="PackedScene" uid="uid://btachtyei0hwl" path="res://Armas/ArmaSniper.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://dqyl76ad7wjf1" path="res://Armas/ArmaRifle.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://ipdromn4xdah" path="res://Recursos/GerenteOpcoes.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://clnpuim080pmg" path="res://Armas/ArmaBase.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://blu6e7djveiag" path="res://Recursos/Loja.tscn" id="11"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource( 2 )
-lista_armas = [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 7 ) ]
+script = ExtResource("2")
+lista_armas = Array[PackedScene]([ExtResource("10"), ExtResource("8"), ExtResource("7")])
 
-[node name="BackGround" type="Sprite" parent="."]
-position = Vector2( 640, 360 )
+[node name="BackGround" type="Sprite2D" parent="."]
 z_index = -100
 z_as_relative = false
-texture = ExtResource( 6 )
+position = Vector2(640, 360)
+texture = ExtResource("6")
 
 [node name="TimerGerarInimigo" type="Timer" parent="."]
+autostart = true
 
-[node name="Jogador" parent="." instance=ExtResource( 4 )]
-position = Vector2( 640, 360 )
+[node name="Jogador" parent="." instance=ExtResource("4")]
+position = Vector2(640, 360)
 
 [node name="HUDJogador" type="Node2D" parent="."]
 z_index = 100
 z_as_relative = false
-script = ExtResource( 3 )
+script = ExtResource("3")
 
 [node name="BarraDeVida" type="ProgressBar" parent="HUDJogador"]
-margin_left = 540.0
-margin_top = 20.0
-margin_right = 740.0
-margin_bottom = 50.0
-percent_visible = false
+offset_left = 540.0
+offset_top = 20.0
+offset_right = 740.0
+offset_bottom = 50.0
 
 [node name="EtiquetaPontuacao" type="Label" parent="HUDJogador"]
-margin_left = 640.0
-margin_top = 650.0
-margin_right = 680.0
-margin_bottom = 690.0
+offset_left = 640.0
+offset_top = 650.0
+offset_right = 680.0
+offset_bottom = 690.0
 text = "SCORE: 0"
 
 [node name="EtiquetaMaiorPontuacao" type="Label" parent="HUDJogador"]
-margin_left = 1155.0
-margin_top = 646.0
-margin_right = 1277.0
-margin_bottom = 686.0
+offset_left = 1155.0
+offset_top = 646.0
+offset_right = 1277.0
+offset_bottom = 686.0
 
 [node name="EtiquetaFPS" type="Label" parent="HUDJogador"]
-margin_left = 1167.0
-margin_top = 19.0
-margin_right = 1261.0
-margin_bottom = 56.0
+offset_left = 1167.0
+offset_top = 19.0
+offset_right = 1261.0
+offset_bottom = 56.0
 
 [node name="AzulejoMunicao" type="TextureRect" parent="HUDJogador"]
-margin_left = 30.0
-margin_top = 700.0
-margin_right = 46.0
-margin_bottom = 716.0
-rect_rotation = 180.0
-texture = ExtResource( 5 )
-expand = true
+offset_left = 30.0
+offset_top = 700.0
+offset_right = 46.0
+offset_bottom = 716.0
+rotation = 180.0
+texture = ExtResource("5")
+expand_mode = 1
 stretch_mode = 2
 
 [node name="ImagemArma" type="TextureRect" parent="HUDJogador"]
-margin_left = 60.0
-margin_top = 600.0
-margin_right = 160.0
-margin_bottom = 700.0
-rect_rotation = -45.0
-rect_pivot_offset = Vector2( 50, 50 )
-expand = true
+offset_left = 60.0
+offset_top = 600.0
+offset_right = 160.0
+offset_bottom = 700.0
+rotation = -45.0
+pivot_offset = Vector2(50, 50)
+expand_mode = 1
 
 [node name="GerenteInimigos" type="Node2D" parent="."]
 
@@ -83,14 +83,22 @@ expand = true
 
 [node name="GerenteArmas" type="Node2D" parent="."]
 
-[node name="TelaMorte" parent="." instance=ExtResource( 1 )]
+[node name="TelaMorte" parent="." instance=ExtResource("1")]
 visible = false
 z_index = 1000
 z_as_relative = false
 
-[node name="GerenteOpcoes" parent="." instance=ExtResource( 9 )]
+[node name="GerenteOpcoes" parent="." instance=ExtResource("9")]
 
-[node name="Shop" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1184, 349 )
+[node name="Loja" parent="." instance=ExtResource("11")]
+z_index = -5
+z_as_relative = false
+position = Vector2(1039, 360)
+
+[node name="TimerLoja" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
 
 [connection signal="timeout" from="TimerGerarInimigo" to="." method="_on_TimerGerarInimigo_timeout"]
+[connection signal="timeout" from="TimerLoja" to="." method="_on_TimerLoja_timeout"]

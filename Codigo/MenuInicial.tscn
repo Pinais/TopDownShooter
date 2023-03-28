@@ -1,91 +1,94 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=13 format=3 uid="uid://0gmqkcr0o7s2"]
 
-[ext_resource path="res://Componentes/Gravity Guardian.png" type="Texture" id=1]
-[ext_resource path="res://Componentes/SpaceBackground.png" type="Texture" id=2]
-[ext_resource path="res://Componentes/BtComecar.png" type="Texture" id=3]
-[ext_resource path="res://Codigo/MenuInicial.gd" type="Script" id=4]
-[ext_resource path="res://Componentes/BtComecar (1).png" type="Texture" id=5]
-[ext_resource path="res://Componentes/BtSair (1).png" type="Texture" id=6]
-[ext_resource path="res://Componentes/BtSair.png" type="Texture" id=7]
-[ext_resource path="res://Componentes/BtOpções.png" type="Texture" id=8]
-[ext_resource path="res://Componentes/BtOpções (1).png" type="Texture" id=9]
-[ext_resource path="res://Componentes/Inter-VariableFont_slnt,wght.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://Componentes/QRCode.png" type="Texture" id=11]
+[ext_resource type="Texture2D" uid="uid://diyevfm8pqlq5" path="res://Componentes/Gravity Guardian.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://ctetj6hgxm6k6" path="res://Componentes/SpaceBackground.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://b0v4x0mfkumm7" path="res://Componentes/BtComecar.png" id="3"]
+[ext_resource type="Script" path="res://Codigo/MenuInicial.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://do3s0ngmpttvu" path="res://Componentes/BtComecar (1).png" id="5"]
+[ext_resource type="Texture2D" uid="uid://c8clhgd2ud1kx" path="res://Componentes/BtSair (1).png" id="6"]
+[ext_resource type="Texture2D" uid="uid://cstgeknsdn4r1" path="res://Componentes/BtSair.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://coipbd43jd1iy" path="res://Componentes/BtOpções.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://pwnl84gconca" path="res://Componentes/BtOpções (1).png" id="9"]
+[ext_resource type="FontFile" uid="uid://cyw2gcuto14kh" path="res://Componentes/Inter-VariableFont_slnt,wght.ttf" id="10"]
+[ext_resource type="Texture2D" uid="uid://b502cx11hwlsg" path="res://Componentes/QRCode.png" id="11"]
 
-[sub_resource type="DynamicFont" id=1]
-size = 28
-font_data = ExtResource( 10 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("10")])
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="MenuInicial" type="Node2D"]
-script = ExtResource( 4 )
+script = ExtResource("4")
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
-margin_right = 1280.0
-margin_bottom = 720.0
+offset_right = 1280.0
+offset_bottom = 720.0
 
 [node name="BG" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 2 )
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2")
 
 [node name="GravityGuardian" type="TextureRect" parent="."]
-margin_right = 1280.0
-margin_bottom = 285.0
-rect_pivot_offset = Vector2( 640, 142.5 )
-texture = ExtResource( 1 )
+offset_right = 1280.0
+offset_bottom = 285.0
+pivot_offset = Vector2(640, 142.5)
+texture = ExtResource("1")
 stretch_mode = 4
 
 [node name="Botao_Comecar" type="TextureButton" parent="."]
-margin_left = 490.0
-margin_top = 285.0
-margin_right = 790.0
-margin_bottom = 385.0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 5 )
-expand = true
+offset_left = 490.0
+offset_top = 285.0
+offset_right = 790.0
+offset_bottom = 385.0
+texture_normal = ExtResource("3")
+texture_pressed = ExtResource("5")
+texture_hover = ExtResource("5")
 stretch_mode = 3
 
 [node name="Botao_Opcoes" type="TextureButton" parent="."]
-margin_left = 490.0
-margin_top = 409.0
-margin_right = 790.0
-margin_bottom = 509.0
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 9 )
-texture_hover = ExtResource( 9 )
-expand = true
+offset_left = 490.0
+offset_top = 409.0
+offset_right = 790.0
+offset_bottom = 509.0
+texture_normal = ExtResource("8")
+texture_pressed = ExtResource("9")
+texture_hover = ExtResource("9")
 stretch_mode = 3
 
 [node name="Botao_Sair" type="TextureButton" parent="."]
-margin_left = 490.0
-margin_top = 533.0
-margin_right = 790.0
-margin_bottom = 633.0
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 6 )
-texture_hover = ExtResource( 6 )
-expand = true
+offset_left = 490.0
+offset_top = 533.0
+offset_right = 790.0
+offset_bottom = 633.0
+texture_normal = ExtResource("7")
+texture_pressed = ExtResource("6")
+texture_hover = ExtResource("6")
 stretch_mode = 3
 
 [node name="Credits" type="Label" parent="."]
-modulate = Color( 0.321569, 0.313726, 0.313726, 1 )
-margin_left = 858.0
-margin_top = 673.0
-margin_right = 1272.0
-margin_bottom = 712.0
-custom_fonts/font = SubResource( 1 )
+modulate = Color(0.321569, 0.313726, 0.313726, 1)
+offset_left = 858.0
+offset_top = 673.0
+offset_right = 1272.0
+offset_bottom = 712.0
+theme_override_fonts/font = SubResource("1")
 text = "Jogo desenvolvido pela GG™"
-align = 1
-valign = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 10.0
-margin_top = 560.0
-margin_right = 160.0
-margin_bottom = 710.0
-texture = ExtResource( 11 )
-expand = true
+offset_left = 10.0
+offset_top = 560.0
+offset_right = 160.0
+offset_bottom = 710.0
+texture = ExtResource("11")
+expand_mode = 1
 
 [connection signal="pressed" from="Botao_Comecar" to="." method="_on_Botao_Comecar_pressed"]
 [connection signal="pressed" from="Botao_Opcoes" to="." method="_on_Botao_Opcoes_pressed"]

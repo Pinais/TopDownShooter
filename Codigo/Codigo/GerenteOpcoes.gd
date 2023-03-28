@@ -3,11 +3,13 @@ var dicionario_opcoes : Dictionary
 
 func carregar_dicionario_opcoes():
 	print("enviando dictionary")
-	var arquivo = File.new()
-	if arquivo.file_exists("user://config.cfg"):
-		arquivo.open("user://config.cfg", File.READ)
-		dicionario_opcoes = parse_json(arquivo.get_line())
-		arquivo.close()
+	if FileAccess.file_exists("user://config.cfg"):
+		var arquivo = FileAccess.open("user://config.cfg", FileAccess.READ)
+		if  arquivo.get_length() != 0:
+			var test_json_conv = JSON.new()
+			test_json_conv.parse(arquivo.get_line())
+			dicionario_opcoes = test_json_conv.get_data()
+			arquivo.close()
 	else:
 		criar_dicionario_padrao()
 		salvar_dicionario_opcoes(dicionario_opcoes)
@@ -25,7 +27,6 @@ func criar_dicionario_padrao():
 	return dicionario_opcoes
 
 func salvar_dicionario_opcoes(_dicionario_opcoes : Dictionary):
-	var arquivo = File.new()
-	arquivo.open("user://config.cfg", File.WRITE)
-	arquivo.store_line(to_json(_dicionario_opcoes))
+	var arquivo = FileAccess.open("user://config.cfg", FileAccess.WRITE)
+	arquivo.store_line(JSON.stringify(_dicionario_opcoes))
 	arquivo.close()

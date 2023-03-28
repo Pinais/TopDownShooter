@@ -1,20 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://b71nx1in16bo0"]
 
-[ext_resource path="res://Componentes/satellite.png" type="Texture" id=1]
-[ext_resource path="res://Codigo/Inimigo.gd" type="Script" id=2]
+[ext_resource type="Texture2D" uid="uid://dgc4r1711xwh6" path="res://Componentes/satellite.png" id="1"]
+[ext_resource type="Script" path="res://Codigo/Inimigo.gd" id="2"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20, 32 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(38, 62)
 
-[node name="Inimigo" type="Sprite"]
-position = Vector2( 440, 263 )
+[node name="Inimigo" type="Sprite2D"]
 z_index = 5
-texture = ExtResource( 1 )
-script = ExtResource( 2 )
+position = Vector2(440, 263)
+texture = ExtResource("1")
+script = ExtResource("2")
 
 [node name="Area2D" type="Area2D" parent="." groups=["inimigo"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 1 )
+shape = SubResource("1")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
